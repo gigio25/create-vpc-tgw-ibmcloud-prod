@@ -8,11 +8,11 @@ locals {
     "${var.vpc_hub_1_region}-3" = []
   }
 
-  address_vpc_hub_2 = {
-    "${var.vpc_hub_2_zone_1}"   = ["${var.address_vpc_hub_2_1}"],
-    "${var.vpc_hub_2_zone_2}"   = ["${var.address_vpc_hub_2_2}"],
-    "${var.vpc_hub_2_region}-3" = []
-  }
+  # address_vpc_hub_2 = {
+  #   "${var.vpc_hub_2_zone_1}"   = ["${var.address_vpc_hub_2_1}"],
+  #   "${var.vpc_hub_2_zone_2}"   = ["${var.address_vpc_hub_2_2}"],
+  #   "${var.vpc_hub_2_region}-3" = []
+  # }
 
   bits_ahead_subnet_hub = 1
   hub_private_subnets   = ["ibc-bsesnet-hubextsao-nprd", "ibc-bsesnet-hubintsao-nprd"]
@@ -39,7 +39,7 @@ data "ibm_resource_group" "resource_group_networking" {
 /* Hub VPC */
 module "vpc_hub_1" {
   # é necessário alterar para repo local
-  source            = "github.com/andersonpmartins/terraform-templates/ibmcloud-vpc"
+  source            = "github.com/RafaelLOliveira/terraform-templates/ibmcloud-vpc"
   vpc_name          = var.vpc_hub_name_1
   rg_id             = data.ibm_resource_group.resource_group_networking.id
   vpc_subnet        = local.address_vpc_hub_1
@@ -51,18 +51,18 @@ module "vpc_hub_1" {
   flow_logs         = false
 }
 
-module "vpc_hub_2" {
-  source            = "github.com/andersonpmartins/terraform-templates/ibmcloud-vpc"
-  vpc_name          = var.vpc_hub_name_2
-  rg_id             = data.ibm_resource_group.resource_group_networking.id
-  vpc_subnet        = local.address_vpc_hub_2
-  bits_ahead_subnet = local.bits_ahead_subnet_hub
-  ibmcloud_api_key  = local.ibmcloud_api_key
-  tags              = local.tags
-  address_prefixes  = local.address_vpc_hub_2
-  private_subnets   = local.hub_private_subnets
-  flow_logs         = false
-}
+# module "vpc_hub_2" {
+#   source            = "github.com/RafaelLOliveira/terraform-templates/ibmcloud-vpc"
+#   vpc_name          = var.vpc_hub_name_2
+#   rg_id             = data.ibm_resource_group.resource_group_networking.id
+#   vpc_subnet        = local.address_vpc_hub_2
+#   bits_ahead_subnet = local.bits_ahead_subnet_hub
+#   ibmcloud_api_key  = local.ibmcloud_api_key
+#   tags              = local.tags
+#   address_prefixes  = local.address_vpc_hub_2
+#   private_subnets   = local.hub_private_subnets
+#   flow_logs         = false
+# }
 
 
 /* Transit Gateway resource */
@@ -75,14 +75,14 @@ resource "ibm_tg_gateway" "new_tg_gw-1" {
   tags           = local.tags
 }
 
-resource "ibm_tg_gateway" "new_tg_gw-2" {
-  # count          = local.deploy_transit_gateway == true ? 1 : 0
-  name           = local.tg_name-2
-  location       = local.tgw_region
-  global         = true
-  resource_group = data.ibm_resource_group.resource_group_networking.id
-  tags           = local.tags 
-}
+# resource "ibm_tg_gateway" "new_tg_gw-2" {
+#   # count          = local.deploy_transit_gateway == true ? 1 : 0
+#   name           = local.tg_name-2
+#   location       = local.tgw_region
+#   global         = true
+#   resource_group = data.ibm_resource_group.resource_group_networking.id
+#   tags           = local.tags
+# }
 
 
 

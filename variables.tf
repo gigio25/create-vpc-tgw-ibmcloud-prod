@@ -2,7 +2,7 @@
 # API KEY - Do Usuario que deva ter permissão suficiente na conta IBM Cloud
 /////////////////
 variable "ibmcloud_api_key" {
-  default = ""
+  default = "efNZvlEUa4TcIiT9xpK_GbpXl8N6yLbVfSUN7v2Jn06s"
 }
 
 /////////////////
@@ -10,7 +10,7 @@ variable "ibmcloud_api_key" {
 /////////////////
 variable "tg_name" {
   description = "Transit Gateway name"
-  default     = ""
+  default     = "tgw-bradesco-hub-1"
 }
 
 variable "tg_region" {
@@ -73,39 +73,39 @@ variable "address_vpc_hub_1_3" {
 }
 
 /////////////////
-VPC HUB 2
+# VPC HUB 2
 /////////////////
-variable "vpc_hub_name_2" {
-  description = "Name for VPC HUB 2"
-  default     = "vpc-diti-core-hub-2"
-}
+# variable "vpc_hub_name_2" {
+#   description = "Name for VPC HUB 2"
+#   default     = "vpc-diti-core-hub-2"
+# }
 
-variable "vpc_hub_2_region" {
-  description = "Region to be used for VPC HUB 2"
-  default     = "us-south"
-}
+# variable "vpc_hub_2_region" {
+#   description = "Region to be used for VPC HUB 2"
+#   default     = "us-south"
+# }
 
-variable "vpc_hub_2_zone_1" {
-  description = "Zone 1 or 2 to be used for VPC HUB 2"
-  default     = "us-south-1"
-}
+# variable "vpc_hub_2_zone_1" {
+#   description = "Zone 1 or 2 to be used for VPC HUB 2"
+#   default     = "us-south-1"
+# }
 
-variable "vpc_hub_2_zone_2" {
-  description = "Zone 1 or 2 to be used for VPC HUB 2"
-  default     = "us-south-2"
-}
+# variable "vpc_hub_2_zone_2" {
+#   description = "Zone 1 or 2 to be used for VPC HUB 2"
+#   default     = "us-south-2"
+# }
 
-variable "address_vpc_hub_2_1" {
-  description = "Adress prefix for VPC HUB 1 in zone 1"
-  type        = string
-  default     = "193.168.192.0/20"
-}
+# variable "address_vpc_hub_2_1" {
+#   description = "Adress prefix for VPC HUB 1 in zone 1"
+#   type        = string
+#   default     = "193.168.192.0/20"
+# }
 
-variable "address_vpc_hub_2_2" {
-  description = "Adress prefix for VPC HUB 1 in zone 2"
-  type        = string
-  default     = "193.168.208.0/20"
-}
+# variable "address_vpc_hub_2_2" {
+#   description = "Adress prefix for VPC HUB 1 in zone 2"
+#   type        = string
+#   default     = "193.168.208.0/20"
+# }
 
 /////////////////
 # TAG _ Tag Para Identificar VPC
