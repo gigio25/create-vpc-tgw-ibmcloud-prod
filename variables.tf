@@ -1,9 +1,3 @@
-// Your SSH key
-variable "ssh_public_key" {
-  default     = ""
-  description = "Public ssh ID name. This needs to be pre-created."
-}
-
 /////////////////
 # API KEY - Do Usuario que deva ter permissão suficiente na conta IBM Cloud
 /////////////////
