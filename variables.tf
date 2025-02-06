@@ -31,7 +31,7 @@ variable "rg" {
 /////////////////
 variable "vpc_hub_name_1" {
   description = "Name for VPC HUB 1"
-  default     = "vpc-brad-diti-core-hub-1"
+  default     = "vpc-trad-diti-core-hub-1"
 }
 
 variable "vpc_hub_1_region" {
