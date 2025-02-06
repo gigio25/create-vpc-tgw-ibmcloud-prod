@@ -10,7 +10,7 @@ variable "ibmcloud_api_key" {
 /////////////////
 variable "tg_name" {
   description = "Transit Gateway name"
-  default     = "tgw-bradesco-hub-1"
+  default     = "tgw-abcd-hub-1"
 }
 
 variable "tg_region" {
@@ -112,7 +112,7 @@ variable "address_vpc_hub_1_3" {
 /////////////////
 variable "tag1" {
   description = "Tag for resources to be used for this core networking"
-  default     = "apaiva-tag-bradesco-hub"
+  default     = "apaiva-tag-abcd-hub"
 }
 
 
