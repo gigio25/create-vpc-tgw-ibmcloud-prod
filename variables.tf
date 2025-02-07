@@ -49,10 +49,10 @@ variable "vpc_hub_1_zone_2" {
   default     = "br-sao-2"
 }
 
-variable "vpc_hub_1_zone_3" {
-  description = "Zone 1 or 3 to be used for VPC HUB 1"
-  default     = "br-sao-3"
-}
+#variable "vpc_hub_1_zone_3" {
+#  description = "Zone 1 or 3 to be used for VPC HUB 1"
+#  default     = "br-sao-3"
+#}
 
 variable "address_vpc_hub_1_1" {
   description = "Adress prefix for vpc hub 1 in zone 1"
@@ -66,11 +66,11 @@ variable "address_vpc_hub_1_2" {
   default     = "172.24.197.64/26"
 }
 
-variable "address_vpc_hub_1_3" {
-  description = "Adress prefix for vpc hub 1 in zone 3"
-  type        = string
-  default     = "172.24.197.128/26"
-}
+# variable "address_vpc_hub_1_3" {
+#  description = "Adress prefix for vpc hub 1 in zone 3"
+#  type        = string
+#  default     = "172.24.197.128/26"
+#}
 
 /////////////////
 # VPC HUB 2
