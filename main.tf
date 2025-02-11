@@ -15,7 +15,7 @@ locals {
   # }
 
   bits_ahead_subnet_hub = 1
-  hub_private_subnets   = ["ibc-bsesnet-hubextsao-nprd", "ibc-bsesnet-hubintsao-nprd"]
+  hub_private_subnets   = ["ibc-bsesnet-hubextsao-prd", "ibc-bsesnet-hubintsao-prd"]
 
   tg_name-1 = "TG_${var.tg_name}_1"
   # tg_name-2 = "TG_${var.tg_name}_2"
